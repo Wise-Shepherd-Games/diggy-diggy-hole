@@ -7,7 +7,7 @@ namespace PlayerMovement
         public float speed = 10f;
         public float rotationSpeed = 720f;
 
-        void Update()
+        void FixedUpdate()
         {
             float forward = Input.GetAxis("Vertical");
             float right = Input.GetAxis("Horizontal");
@@ -30,6 +30,7 @@ namespace PlayerMovement
                 {
                     toRotation.y -= 0.45f;
                 }
+
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
             }
         }
