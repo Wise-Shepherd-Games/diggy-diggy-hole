@@ -16,7 +16,7 @@ public class Knockback : MonoBehaviour
             var pRb = obj.gameObject.GetComponent<Rigidbody>();
 
             pRb.AddForce(Vector3.up * knockbackForce, ForceMode.Impulse);
-            pRb.AddTorque(new Vector3(Random.value, 1, Random.value) * rotateForce, ForceMode.Impulse);
+            pRb.AddTorque(new Vector3(1, Random.value, Random.value) * rotateForce, ForceMode.Impulse);
         }
     }
 }
