@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c9806453719a361439cb026e9e11fc5c, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9806453719a361439cb026e9e11fc5c, type: 3}
       propertyPath: m_LocalScale.x
@@ -76,7 +76,7 @@ PrefabInstance:
       addedObject: {fileID: 8735205825006051031}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: c9806453719a361439cb026e9e11fc5c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5723526684781293428}
+      addedObject: {fileID: 784501548496863233}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c9806453719a361439cb026e9e11fc5c, type: 3}
       insertIndex: -1
@@ -242,7 +242,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1311b395c37a84545a79a9f53693688c, type: 3}
---- !u!4 &5723526684781293428 stripped
+--- !u!4 &784501548496863233 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3593057928490145352, guid: 1311b395c37a84545a79a9f53693688c, type: 3}
   m_PrefabInstance: {fileID: 4268857358042011209}
@@ -317,7 +317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 330c25fe47d0a8341b809ede5f3b8e7c, type: 3}
       propertyPath: m_TagString
-      value: Trap
+      value: Entity
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

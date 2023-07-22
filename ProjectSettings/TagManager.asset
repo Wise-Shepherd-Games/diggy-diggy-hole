@@ -8,6 +8,8 @@ TagManager:
   - Trap
   - TrapTrigger
   - Ground
+  - Interactable
+  - Entity
   layers:
   - Default
   - TransparentFX

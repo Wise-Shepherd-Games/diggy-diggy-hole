@@ -17,8 +17,12 @@ public class BarrelTrap : Trap
 
     private void ThrowBarrel()
     {
-        var rbSpike = barrel.gameObject.GetComponent<Rigidbody>();
-        rbSpike.AddForce(-this.transform.forward * barrelVelocity, ForceMode.Impulse);
-        rbSpike.constraints = RigidbodyConstraints.None;
+        if (barrel.tag != "Interactable")
+        {
+            barrel.tag = "Trap";
+            var rbSpike = barrel.gameObject.GetComponent<Rigidbody>();
+            rbSpike.AddForce(-this.transform.forward * barrelVelocity, ForceMode.Impulse);
+            rbSpike.constraints = RigidbodyConstraints.None;
+        }
     }
 }

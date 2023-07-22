@@ -12,7 +12,7 @@ public class TrapTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider obj)
     {
-        if (obj.tag == "Player")
+        if (obj.tag == "Player" || obj.tag == "Interactable" || obj.tag == "Trap")
         {
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
             trap?.TriggerTrap();
