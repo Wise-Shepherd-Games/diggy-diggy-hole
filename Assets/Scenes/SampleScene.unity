@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.45013845, g: 0.49767864, b: 0.56199414, a: 1}
+  m_IndirectSpecularColor: {r: 0.450136, g: 0.49767834, b: 0.56199336, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -309,7 +309,7 @@ GameObject:
   - component: {fileID: 318356430}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -576,7 +576,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634602081}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0135, y: 0.4083, z: 0.039}
+  m_LocalPosition: {x: 0.029, y: 0.4083, z: -0.02}
   m_LocalScale: {x: 0.9, y: 0.8, z: -0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
