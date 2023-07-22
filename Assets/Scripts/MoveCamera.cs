@@ -16,9 +16,9 @@ public class MoveCamera : MonoBehaviour
         int direction = 0;
 
         if (Input.GetKeyDown(KeyCode.E))
-            direction = 1;
-        else if (Input.GetKeyDown(KeyCode.Q))
             direction = -1;
+        else if (Input.GetKeyDown(KeyCode.Q))
+            direction = 1;
 
         target.RotateAround(target.transform.position, Vector3.up, direction * MOVE_ANGLE);
         transform.RotateAround(target.transform.position, Vector3.up, direction * MOVE_ANGLE);

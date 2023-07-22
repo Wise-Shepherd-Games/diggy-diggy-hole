@@ -6,15 +6,16 @@ public class TrapTrigger : MonoBehaviour
 
     void Awake()
     {
-        trap = this.transform.gameObject.GetComponentInParent<Trap>();
+        var parent = this.transform.parent?.gameObject;
+        trap = parent?.GetComponent<Trap>();
     }
 
     void OnTriggerEnter(Collider obj)
     {
         if (obj.tag == "Player")
         {
-            Debug.Log("Trigger!");
-            trap.TriggerTrap();
+            this.gameObject.GetComponent<BoxCollider>().enabled = false;
+            trap?.TriggerTrap();
         }
     }
 }

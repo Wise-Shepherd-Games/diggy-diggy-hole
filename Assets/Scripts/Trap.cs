@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Trap
+public abstract class Trap : MonoBehaviour
 {
+    public int triggerDelay;
     public abstract void TriggerTrap();
 }
