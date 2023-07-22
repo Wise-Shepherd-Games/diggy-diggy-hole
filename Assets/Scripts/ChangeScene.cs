@@ -25,6 +25,9 @@ public class ChangeScene : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+
+        if (other.tag != "Player") return;
+
         if (scenes.Count == allScenes.Length)
         {
             scenes.Clear();
