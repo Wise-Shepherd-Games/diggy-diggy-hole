@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.UIElements;
 using UnityEngine;
 
 public class Logo : MonoBehaviour
 {
-    public PlayerMovement.PlayerMovement player;
+    private PlayerMovement.PlayerMovement player;
     public float rating;
 
     void Awake()
     {
+        player = FindFirstObjectByType<PlayerMovement.PlayerMovement>();
         player.enabled = false;
         Destroy(this.gameObject, 4.8f);
     }
