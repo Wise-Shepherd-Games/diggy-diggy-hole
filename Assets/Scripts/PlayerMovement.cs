@@ -78,7 +78,7 @@ namespace PlayerMovement
             {
                 isDead = true;
                 transform.rotation = Quaternion.Euler(90f, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
-                playerDied.Invoke();
+                playerDied();
             }
         }
     }

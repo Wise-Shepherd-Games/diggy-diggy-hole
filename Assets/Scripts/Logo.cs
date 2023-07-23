@@ -11,7 +11,7 @@ public class Logo : MonoBehaviour
     void Awake()
     {
         player.enabled = false;
-        Destroy(this.gameObject, 6);
+        Destroy(this.gameObject, 5);
     }
 
     void Update()
