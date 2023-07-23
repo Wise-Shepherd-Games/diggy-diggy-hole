@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Transition : MonoBehaviour
 {
-    public PlayerMovement.PlayerMovement player;
+    private PlayerMovement.PlayerMovement player;
     public float rating;
 
     void Awake()
     {
+        player = FindFirstObjectByType<PlayerMovement.PlayerMovement>();
         player.enabled = false;
         Destroy(this.gameObject, 1.5f);
     }

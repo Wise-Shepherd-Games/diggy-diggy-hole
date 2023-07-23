@@ -8,7 +8,7 @@ public class ChangeScene : MonoBehaviour
 {
     public static UnityAction sceneChanged;
     private static Stack<string> scenes;
-    private static string[] allScenes;
+    public static string[] allScenes;
 
     void Start()
     {

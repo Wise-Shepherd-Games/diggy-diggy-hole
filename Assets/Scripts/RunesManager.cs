@@ -2,16 +2,20 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class RunesManager : MonoBehaviour
 {
     private static RunesManager instance = null;
     public Texture[] runes = new Texture[6];
+    private UIDocument document;
     public static readonly Dictionary<TrapType, TrapDTO> dict = new(6);
 
     void Awake()
     {
+        document = GetComponent<UIDocument>();
+
         if (instance != null)
         {
             DestroyImmediate(this.gameObject);
@@ -27,11 +31,13 @@ public class RunesManager : MonoBehaviour
     void OnEnable()
     {
         ChangeScene.sceneChanged += OnChangeSceneEvent;
+        PlayerMovement.PlayerMovement.playerDied += OnPlayerDied;
     }
 
     void OnDisable()
     {
         ChangeScene.sceneChanged -= OnChangeSceneEvent;
+        PlayerMovement.PlayerMovement.playerDied -= OnPlayerDied;
     }
 
     void OnChangeSceneEvent()
@@ -40,8 +46,28 @@ public class RunesManager : MonoBehaviour
         UpdateUI();
     }
 
+    void OnPlayerDied()
+    {
+        Button button = document.rootVisualElement.Q<Button>("Button");
+        button.style.display = DisplayStyle.Flex;
+        button.clicked += () =>
+        {
+            button.style.display = DisplayStyle.None;
+            string[] allScenes = ChangeScene.allScenes;
+            string scene = allScenes[UnityEngine.Random.Range(0, allScenes.Length)];
+            SceneManager.LoadScene(scene);
+
+            InitializeDict();
+            UpdateUI();
+
+        };
+    }
+
     void InitializeDict()
     {
+        if (dict.Count > 0)
+            dict.Clear();
+
         foreach (TrapType trap in Enum.GetValues(typeof(TrapType)))
         {
             Texture rune;
@@ -64,7 +90,6 @@ public class RunesManager : MonoBehaviour
 
     void UpdateUI()
     {
-        UIDocument document = GetComponent<UIDocument>();
         VisualElement container = document.rootVisualElement.Q("Container");
         container.Clear();
 
