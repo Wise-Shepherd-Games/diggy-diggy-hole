@@ -20,5 +20,6 @@ public class Transition : MonoBehaviour
     void OnDestroy()
     {
         player.enabled = true;
+        RunesManager.first = false;
     }
 }

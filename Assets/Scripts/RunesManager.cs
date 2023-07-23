@@ -7,6 +7,9 @@ using UnityEngine;
 
 public class RunesManager : MonoBehaviour
 {
+    public static bool first = true;
+    [SerializeField] GameObject logos;
+    [SerializeField] GameObject transition;
     private static RunesManager instance = null;
     public Texture[] runes = new Texture[6];
     private UIDocument document;
@@ -15,6 +18,19 @@ public class RunesManager : MonoBehaviour
     void Awake()
     {
         document = GetComponent<UIDocument>();
+        logos = GameObject.Find("Logos");
+        transition = GameObject.Find("Transition");
+
+        if (first)
+        {
+            logos.SetActive(true);
+            transition.SetActive(false);
+        }
+        else
+        {
+            logos.SetActive(false);
+            transition.SetActive(true);
+        }
 
         if (instance != null)
         {

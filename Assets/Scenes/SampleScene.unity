@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.450136, g: 0.49767834, b: 0.56199336, a: 1}
+  m_IndirectSpecularColor: {r: 0.45013845, g: 0.49767864, b: 0.56199414, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1178,6 +1178,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6479704602444098387, guid: 79b6dcf85691152409350c9bfa19c6b4, type: 3}
   m_PrefabInstance: {fileID: 542516432}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &549276455 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2602586303412546625, guid: ce176855602614649aae38b5a34c265e, type: 3}
+  m_PrefabInstance: {fileID: 4588364758733498006}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &554729042
 PrefabInstance:
@@ -5078,7 +5083,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5efc9e8a5fa863b42bf634de98f185d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 318356426}
   rating: 3
 --- !u!4 &1629660378
 Transform:
@@ -6487,7 +6491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2602586303412546625, guid: ce176855602614649aae38b5a34c265e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3903237085935764976, guid: ce176855602614649aae38b5a34c265e, type: 3}
       propertyPath: m_RootOrder
@@ -6785,6 +6789,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: RuneManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8046463170708570437, guid: a13369e118ef771439d0fb7e40d46e9c, type: 3}
+      propertyPath: logos
+      value: 
+      objectReference: {fileID: 1629660376}
+    - target: {fileID: 8046463170708570437, guid: a13369e118ef771439d0fb7e40d46e9c, type: 3}
+      propertyPath: transition
+      value: 
+      objectReference: {fileID: 549276455}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
