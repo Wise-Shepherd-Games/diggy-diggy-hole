@@ -23,6 +23,7 @@ public class BarrelTrap : Trap
             var rbSpike = barrel.gameObject.GetComponent<Rigidbody>();
             rbSpike.AddForce(-this.transform.forward * barrelVelocity, ForceMode.Impulse);
             rbSpike.constraints = RigidbodyConstraints.None;
+            DestroyChildren();
         }
     }
 }

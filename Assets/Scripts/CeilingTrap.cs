@@ -20,5 +20,6 @@ public class CeilingTrap : Trap
     {
         ceiling.SetActive(true);
         ceiling.GetComponent<Rigidbody>().AddForce(Vector3.down * fallForce, ForceMode.Impulse);
+        DestroyChildren();
     }
 }

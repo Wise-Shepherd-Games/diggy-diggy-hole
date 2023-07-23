@@ -21,6 +21,7 @@ public class SpikeTrap : Trap
         var rbSpike = spike.gameObject.GetComponent<Rigidbody>();
         rbSpike.AddForce(this.transform.forward * spikeVelocity, ForceMode.Impulse);
         rbSpike.constraints = RigidbodyConstraints.None;
+        DestroyChildren();
     }
 
 }

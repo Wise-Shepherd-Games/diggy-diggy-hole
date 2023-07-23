@@ -22,11 +22,14 @@ public class FishTrap : Trap
 
     public override void TriggerTrap() => Invoke("ThrowFish", this.triggerDelay);
 
-    private void ThrowFish() =>
+    private void ThrowFish()
+    {
         fishes.ForEach((obj) =>
         {
             obj.transform.gameObject.SetActive(true);
             obj.FlyAway(fishVelocity, fishRotate);
         });
+        DestroyChildren();
+    }
 
 }

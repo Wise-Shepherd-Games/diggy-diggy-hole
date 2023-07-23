@@ -12,5 +12,7 @@ public class FloorTrap : Trap
         rb.isKinematic = false;
         rb.AddForce(Vector3.down * 10, ForceMode.Impulse);
         rb.constraints = RigidbodyConstraints.None;
+        DestroyChildren();
+        Object.Destroy(this.gameObject, 5);
     }
 }

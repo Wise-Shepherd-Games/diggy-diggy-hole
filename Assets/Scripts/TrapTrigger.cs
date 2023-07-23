@@ -26,6 +26,7 @@ public class TrapTrigger : MonoBehaviour
             {
                 if (triggerSounds.Count > 0)
                     audioSource.PlayOneShot(triggerSounds[Random.Range(0, triggerSounds.Count)]);
+
                 trap.TriggerTrap();
             }
         }
