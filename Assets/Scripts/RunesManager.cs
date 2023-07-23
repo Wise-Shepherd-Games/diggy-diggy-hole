@@ -14,6 +14,7 @@ public class RunesManager : MonoBehaviour
     public Texture[] runes = new Texture[6];
     private UIDocument document;
     public static readonly Dictionary<TrapType, TrapDTO> dict = new(6);
+    private static int points = 0;
 
     void Awake()
     {
@@ -58,12 +59,14 @@ public class RunesManager : MonoBehaviour
 
     void OnChangeSceneEvent()
     {
+        points++;
         UpdateTrapsEnabled();
         UpdateUI();
     }
 
     void OnPlayerDied()
     {
+        points = 0;
         Button button = document.rootVisualElement.Q<Button>("Button");
         button.style.display = DisplayStyle.Flex;
         button.clicked += () =>
@@ -122,6 +125,9 @@ public class RunesManager : MonoBehaviour
 
             container.Add(img);
         }
+
+        var pLb = document.rootVisualElement.Q<Label>("Points");
+        pLb.text = "Levels Completed: " + points.ToString();
     }
 }
 

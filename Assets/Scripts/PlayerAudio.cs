@@ -10,10 +10,6 @@ public class PlayerAudio : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            PlayDash();
-        }
     }
 
     private void PlayDash()

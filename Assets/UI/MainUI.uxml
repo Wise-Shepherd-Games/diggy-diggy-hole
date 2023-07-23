@@ -1,9 +1,12 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/rune.uss?fileID=7433441132597879392&amp;guid=0130abc0c2422db95a2c74dcf6d3eb13&amp;type=3#rune" />
     <ui:VisualElement name="VisualElement" style="background-color: rgba(0, 0, 0, 0); flex-grow: 1; align-items: flex-end;">
+        <ui:VisualElement name="PointsContainer" style="flex-grow: 1; flex-direction: column; align-items: flex-end;">
+            <ui:Label tabindex="-1" display-tooltip-when-elided="true" name="Points" style="-unity-font-style: bold; color: rgb(255, 255, 255);" />
+        </ui:VisualElement>
         <ui:VisualElement name="Container" style="flex-grow: 1; flex-direction: row-reverse; align-items: flex-end;" />
     </ui:VisualElement>
-    <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); position: absolute; width: 100%; height: 100%; align-items: center; justify-content: center;">
-        <ui:Button text="Try Again" display-tooltip-when-elided="true" name="Button" enable-rich-text="true" style="font-size: 32px; align-items: center; justify-content: center; display: none;" />
+    <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); position: absolute; width: 100%; height: 100%; align-items: center; justify-content: center; border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px;">
+        <ui:Button text="Try Again" display-tooltip-when-elided="true" name="Button" enable-rich-text="true" style="font-size: 32px; align-items: center; justify-content: center; display: none; border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; -unity-background-image-tint-color: rgb(255, 255, 255); background-color: rgb(72, 86, 183); -unity-font: url(&apos;project://database/Assets/Fonts/Dungeon%20Crawler%20CB.ttf?fileID=12800000&amp;guid=973687ec7e0f07f43ad64834d4da6235&amp;type=3#Dungeon Crawler CB&apos;); color: rgb(255, 255, 255);" />
     </ui:VisualElement>
 </ui:UXML>

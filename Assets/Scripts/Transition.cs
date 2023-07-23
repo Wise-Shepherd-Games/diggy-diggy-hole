@@ -2,13 +2,10 @@ using UnityEngine;
 
 public class Transition : MonoBehaviour
 {
-    private PlayerMovement.PlayerMovement player;
     public float rating;
 
     void Awake()
     {
-        player = FindFirstObjectByType<PlayerMovement.PlayerMovement>();
-        player.enabled = false;
         Destroy(this.gameObject, 1.5f);
     }
 
@@ -19,7 +16,6 @@ public class Transition : MonoBehaviour
 
     void OnDestroy()
     {
-        player.enabled = true;
         RunesManager.first = false;
     }
 }
