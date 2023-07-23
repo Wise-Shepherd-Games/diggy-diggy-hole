@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: e0f11d7db984d9d48b5f897cb4ced7d0, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e0f11d7db984d9d48b5f897cb4ced7d0, type: 3}
       propertyPath: m_LocalScale.x
@@ -222,6 +222,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3593057928490145352, guid: 1311b395c37a84545a79a9f53693688c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779663852405181925, guid: 1311b395c37a84545a79a9f53693688c, type: 3}
+      propertyPath: triggerSounds.Array.size
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

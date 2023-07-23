@@ -30,9 +30,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 760430247895021578}
-  - {fileID: 4384875544019044777}
+  - {fileID: 3545743682436821043}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3517563060383447995
 MonoBehaviour:
@@ -109,7 +109,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1311b395c37a84545a79a9f53693688c, type: 3}
---- !u!4 &4384875544019044777 stripped
+--- !u!4 &3545743682436821043 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3593057928490145352, guid: 1311b395c37a84545a79a9f53693688c, type: 3}
   m_PrefabInstance: {fileID: 65328797577455227}
@@ -173,6 +173,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 747ac1f909b57ca4293d0b47dc5d4b79, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 747ac1f909b57ca4293d0b47dc5d4b79, type: 3}
+      propertyPath: m_TagString
+      value: Trap
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
