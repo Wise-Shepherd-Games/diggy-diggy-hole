@@ -1,11 +1,13 @@
 using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.Events;
 
 namespace PlayerMovement
 {
     public class PlayerMovement : MonoBehaviour
     {
+        public static UnityAction playerDied;
         public float speed = 10f;
         [Range(0, 45)] public float turnAngle = 15f;
         public float dashForce = 0.1f;
@@ -76,6 +78,7 @@ namespace PlayerMovement
             {
                 isDead = true;
                 transform.rotation = Quaternion.Euler(90f, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+                playerDied.Invoke();
             }
         }
     }
