@@ -8,7 +8,7 @@ public class Fish : MonoBehaviour
     {
         var rbFish = this.gameObject.GetComponent<Rigidbody>();
         rbFish.constraints = RigidbodyConstraints.None;
-        rbFish.AddForce(this.transform.right * velocity, ForceMode.Impulse);
+        rbFish.AddForce(this.transform.forward * velocity, ForceMode.Impulse);
         rbFish.AddTorque(new Vector3(0, 1, 0) * rotateForce, ForceMode.Impulse);
     }
 }
