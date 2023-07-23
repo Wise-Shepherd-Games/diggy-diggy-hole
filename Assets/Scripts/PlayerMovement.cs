@@ -81,5 +81,16 @@ namespace PlayerMovement
                 playerDied();
             }
         }
+
+        void OnTriggerEnter(Collider other)
+        {
+
+            if (other.gameObject?.tag == "Trap")
+            {
+                isDead = true;
+                transform.rotation = Quaternion.Euler(90f, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+                playerDied();
+            }
+        }
     }
 }
