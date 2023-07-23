@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class RunesManager : MonoBehaviour
 {
-    static RunesManager instance = null;
+    private static RunesManager instance = null;
     public Texture[] runes = new Texture[6];
     public static readonly Dictionary<TrapType, TrapDTO> dict = new(6);
 
@@ -20,7 +20,28 @@ public class RunesManager : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(this.gameObject);
+        InitializeDict();
+        UpdateUI();
+    }
 
+    void OnEnable()
+    {
+        ChangeScene.sceneChanged += OnChangeSceneEvent;
+    }
+
+    void OnDisable()
+    {
+        ChangeScene.sceneChanged -= OnChangeSceneEvent;
+    }
+
+    void OnChangeSceneEvent()
+    {
+        UpdateTrapsEnabled();
+        UpdateUI();
+    }
+
+    void InitializeDict()
+    {
         foreach (TrapType trap in Enum.GetValues(typeof(TrapType)))
         {
             Texture rune;
@@ -33,9 +54,19 @@ public class RunesManager : MonoBehaviour
 
             dict.Add(trap, new(rune, UnityEngine.Random.value >= 0.5));
         }
+    }
 
+    void UpdateTrapsEnabled()
+    {
+        foreach (var (_, dto) in dict)
+            dto.enabled = UnityEngine.Random.value >= 0.5;
+    }
+
+    void UpdateUI()
+    {
         UIDocument document = GetComponent<UIDocument>();
         VisualElement container = document.rootVisualElement.Q("Container");
+        container.Clear();
 
         foreach (var (_, dto) in dict)
         {
