@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BarrelTrap : Trap
@@ -7,6 +5,8 @@ public class BarrelTrap : Trap
     [Range(0, 100)]
     public float barrelVelocity;
     GameObject barrel;
+
+    public override TrapType type => TrapType.Barrel;
 
     void Awake()
     {

@@ -2,20 +2,23 @@ using UnityEngine;
 
 public class TrapTrigger : MonoBehaviour
 {
-    private Trap trap = null;
+    private Trap trap;
+    private BoxCollider bc;
 
     void Awake()
     {
-        var parent = this.transform.parent?.gameObject;
-        trap = parent?.GetComponent<Trap>();
+        trap = GetComponentInParent<Trap>();
+        bc = GetComponent<BoxCollider>();
     }
 
     void OnTriggerEnter(Collider obj)
     {
         if (obj.tag == "Player" || obj.tag == "Interactable" || obj.tag == "Trap")
         {
-            this.gameObject.GetComponent<BoxCollider>().enabled = false;
-            trap?.TriggerTrap();
+            bc.enabled = false;
+
+            if (RunesManager.dict.TryGetValue(trap.type, out var dto) && dto.enabled)
+                trap.TriggerTrap();
         }
     }
 }

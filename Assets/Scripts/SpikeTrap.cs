@@ -6,6 +6,8 @@ public class SpikeTrap : Trap
     public float spikeVelocity;
     GameObject spike;
 
+    public override TrapType type => TrapType.Spike;
+
     void Awake()
     {
         spike = this.transform.GetChild(0).gameObject;

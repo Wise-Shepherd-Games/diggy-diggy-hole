@@ -1,55 +1,68 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine.UIElements;
 using UnityEngine;
 
-namespace RunesManager
+public class RunesManager : MonoBehaviour
 {
-    public class RunesManager : MonoBehaviour
+    public Texture[] runes = new Texture[6];
+    public static readonly Dictionary<TrapType, TrapDTO> dict = new(6);
+
+    void Awake()
     {
-        public Texture[] runes = new Texture[6];
-        private Dictionary<Trap, Texture> dict = new(6);
-
-        void Awake()
+        foreach (TrapType trap in Enum.GetValues(typeof(TrapType)))
         {
-            foreach (Trap trap in Enum.GetValues(typeof(Trap)))
+            Texture rune;
+
+            do
             {
-                Texture rune;
+                int randomIndex = UnityEngine.Random.Range(0, runes.Length);
+                rune = runes[randomIndex];
+            } while (dict.Any(entry => entry.Value.texture == rune));
 
-                do
-                {
-                    int randomIndex = UnityEngine.Random.Range(0, runes.Length);
-                    rune = runes[randomIndex];
-                } while (dict.ContainsValue(rune));
+            dict.Add(trap, new(rune, UnityEngine.Random.value >= 0.5));
+        }
 
-                dict.Add(trap, rune);
-            }
+        UIDocument document = GetComponent<UIDocument>();
+        VisualElement container = document.rootVisualElement.Q("Container");
 
-            UIDocument document = GetComponent<UIDocument>();
-            VisualElement container = document.rootVisualElement.Q("Container");
+        foreach (var (_, dto) in dict)
+        {
+            if (!dto.enabled) continue;
 
-            foreach (var (_, texture) in dict)
-            {
-                Image img = new();
+            Image img = new();
 
-                img.image = texture;
-                img.AddToClassList("rune");
-                img.style.width = texture.width * 0.5f;
-                img.style.height = texture.height * 0.5f;
+            img.image = dto.texture;
+            img.AddToClassList("rune");
+            img.style.width = dto.texture.width * 0.5f;
+            img.style.height = dto.texture.height * 0.5f;
 
-                container.Add(img);
-            }
+            container.Add(img);
         }
     }
+}
 
-    enum Trap
+public class TrapDTO
+{
+    public Texture texture;
+    public bool enabled;
+
+    public TrapDTO(Texture texture, bool enabled)
     {
-        Barrel,
-        Ceiling,
-        Fish,
-        Floor,
-        Impale,
-        Spike,
+        this.texture = texture;
+        this.enabled = enabled;
     }
 
 }
+
+public enum TrapType
+{
+    Barrel,
+    Ceiling,
+    Fish,
+    Floor,
+    Impale,
+    Spike,
+}
+

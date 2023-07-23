@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FloorTrap : Trap
 {
+    public override TrapType type => TrapType.Floor;
 
     public override void TriggerTrap() => Invoke("Fall", this.triggerDelay);
 

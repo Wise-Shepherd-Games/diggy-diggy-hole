@@ -1,4 +1,3 @@
-using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +8,8 @@ public class FishTrap : Trap
     [Range(0, 100)]
     public float fishRotate;
     List<Fish> fishes = new List<Fish>();
+
+    public override TrapType type => TrapType.Fish;
 
     void Awake()
     {

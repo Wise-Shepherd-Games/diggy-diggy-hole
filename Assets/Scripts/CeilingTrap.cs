@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CeilingTrap : Trap
@@ -8,6 +6,8 @@ public class CeilingTrap : Trap
     [Range(0, 100)]
     public float fallForce;
     GameObject ceiling;
+
+    public override TrapType type => TrapType.Ceiling;
 
     void Awake()
     {

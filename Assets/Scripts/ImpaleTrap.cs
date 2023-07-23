@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ImpaleTrap : Trap
 {
     public bool isHidden;
     GameObject spike;
+
+    public override TrapType type => TrapType.Impale;
 
     void Awake()
     {
