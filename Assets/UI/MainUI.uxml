@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/rune.uss?fileID=7433441132597879392&amp;guid=0130abc0c2422db95a2c74dcf6d3eb13&amp;type=3#rune" />
     <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: column-reverse;">
-        <ui:VisualElement name="Container" style="flex-basis: 200px; flex-direction: row; align-items: center;" />
+        <ui:VisualElement name="Container" style="flex-basis: 100px; flex-direction: row-reverse; align-items: center;" />
     </ui:VisualElement>
 </ui:UXML>

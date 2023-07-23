@@ -6,11 +6,21 @@ using UnityEngine;
 
 public class RunesManager : MonoBehaviour
 {
+    static RunesManager instance = null;
     public Texture[] runes = new Texture[6];
     public static readonly Dictionary<TrapType, TrapDTO> dict = new(6);
 
     void Awake()
     {
+        if (instance != null)
+        {
+            DestroyImmediate(this.gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(this.gameObject);
+
         foreach (TrapType trap in Enum.GetValues(typeof(TrapType)))
         {
             Texture rune;
